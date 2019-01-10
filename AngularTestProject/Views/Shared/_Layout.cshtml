@@ -22,8 +22,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Drivers", "Drivers", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -42,7 +41,11 @@
 
     <script src="~/Scripts/angular.js"></script>
     <script src="~/Scripts/angular-route.js"></script>
-    @Scripts.Render("~/bundles/AngularStructure")
+ 
+    <script src="/Scripts/Angular/Module/Module.js"></script>
+    <script src="/Scripts/Angular/Controller/Controller.js"></script>
+    <script src="/Scripts/Angular/Service/Service.js"></script>
+
     @RenderSection("scripts", required: false)
 </body>
 </html>
