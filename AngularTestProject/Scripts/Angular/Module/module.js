@@ -6,9 +6,10 @@ var app;
 })();
  
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
-    $locationProvider.html5Mode({
-        enabled: true 
-    });
+    //$locationProvider.html5Mode({
+    //    enabled: true 
+    //});
+    $locationProvider.html5Mode(true).hashPrefix('!')
     $routeProvider.
       when("/", {
           templateUrl: "/home/partial/AuthorList",

@@ -1,5 +1,4 @@
-﻿app
-    .service('AuthorsService', function ($http) {
+﻿app.service('AuthorsService', function ($http) {
 
     this.GetAuthorList = function () {
         var request = $http({
