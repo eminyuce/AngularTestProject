@@ -860,13 +860,10 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\AuthorList.cshtml" />
     <Content Include="Views\Shared\DriversList.cshtml" />
-    <Content Include="Views\Home\Drivers.cshtml" />
-    <Content Include="Views\Home\Driver.cshtml" />
     <Content Include="Views\Shared\DriverDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Ajax\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
