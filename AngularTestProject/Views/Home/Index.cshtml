@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+<div ng-controller="NgController" ng-init="GetAuthorList()">
+    <table class="table table-bordered">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+        </tr>
+        <tr ng-repeat="author in authorList">
+            <td>{{author.FirstName}}</td>
+            <td>{{author.LastName}}</td>
+        </tr>
+    </table>
+</div>
