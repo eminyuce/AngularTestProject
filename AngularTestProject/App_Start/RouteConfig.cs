@@ -21,13 +21,24 @@ namespace AngularTestProject
                 defaults: new { controller = "Home", action = "AngularPartials" }
             );
 
-
+            routes.MapRoute(
+                name: "AjaxRequest",
+                url: "Ajax/{action}/{id}",
+                defaults: new { controller = "Ajax", action = "Index", id = UrlParameter.Optional }
+            );
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                name: "AllRequest",
+                url: "{*permalink}",
+                defaults: new { controller = "Home", action = "Index" }
             );
+
+
+            //routes.MapRoute(
+            //    name: "Default",
+            //    url: "{controller}/{action}/{id}",
+            //    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            //);
 
         }
     }

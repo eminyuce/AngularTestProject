@@ -1,5 +1,4 @@
-﻿app
-    .controller('AuthorsController', function ($scope, AuthorsService) {
+﻿app.controller('AuthorsController', function ($scope, AuthorsService) {
 
     $scope.authorList = [];
 
@@ -11,7 +10,7 @@
         },
 
     function (errorPl) {
-        console.log("Countries list fetching error : " + errorPl.data);
+        console.log("Authors list fetching error : " + errorPl.data);
     });
 
     }

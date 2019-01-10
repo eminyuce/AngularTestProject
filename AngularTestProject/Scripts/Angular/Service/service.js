@@ -3,7 +3,7 @@
     this.GetAuthorList = function () {
         var request = $http({
             method: "Get",
-            url: "/Home/AuthorsList"
+            url: "/Ajax/AuthorsList"
         });
         return request;
     }
