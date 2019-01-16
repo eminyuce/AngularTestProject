@@ -1,7 +1,7 @@
-﻿app.controller('AuthorsController', function ($scope, AuthorsService) {
+﻿app.controller('AuthorsController', function ($scope, AuthorsService, myConfig) {
 
     $scope.authorList = [];
-
+    $scope.appName = myConfig.applicationName;
     $scope.GetAuthorList = function () {
         var promisePost = AuthorsService.GetAuthorList();
         promisePost.then(function (pl) {
@@ -15,7 +15,16 @@
 
     }
 });
-
+app.controller('DateController', function ($scope) {
+    var today = new Date();
+    $scope.CurrentDate = today.toLocaleString();
+});
+app.controller('AngularDirectiveController', function ($scope) {
+    $scope.isChecked = function () {
+        $scope.testHide = $scope.testHideChecked;
+    }
+ 
+});
 /* Drivers controller */
 app.controller('DriversController', function ($scope, ergastAPIservice) {
       $scope.nameFilter = null;

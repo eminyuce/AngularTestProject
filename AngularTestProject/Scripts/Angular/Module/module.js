@@ -4,7 +4,7 @@ var app;
 (function () {
     app = angular.module("ANG", ['ngRoute'])
 })();
- 
+
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     //$locationProvider.html5Mode({
     //    enabled: true 
@@ -16,12 +16,20 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
           controller: "AuthorsController"
       }).
       when("/home/drivers", {
-             templateUrl: "/home/partial/DriversList",
-             controller: "DriversController"
-         }).
+          templateUrl: "/home/partial/DriversList",
+          controller: "DriversController"
+      }).
       when("/home/driver/:id", {
           templateUrl: "/home/partial/DriverDetail",
           controller: "DriverController"
+      }).
+      when("/displaydate", {
+          templateUrl: "/home/partial/DisplayDate",
+          controller: "DateController"
+      }).
+      when("/home/angularDirectiveExample", {
+          templateUrl: "/home/partial/NgIfNgShow",
+          controller: "AngularDirectiveController"
       }).
       otherwise({ redirectTo: '/' });
 }]);
@@ -40,7 +48,7 @@ app.run(function ($rootScope) {
     });
 });
 
-app.config(function($sceDelegateProvider) {  
+app.config(function ($sceDelegateProvider) {
     $sceDelegateProvider.resourceUrlWhitelist([
         // Allow same origin resource loads.
         'self',
@@ -48,3 +56,4 @@ app.config(function($sceDelegateProvider) {
         'http://ergast.com/**'
     ]);
 });
+app.constant('myConfig', { applicationName: 'My Angular JS App' });

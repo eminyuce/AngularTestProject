@@ -861,6 +861,8 @@
     <Content Include="Views\Shared\AuthorList.cshtml" />
     <Content Include="Views\Shared\DriversList.cshtml" />
     <Content Include="Views\Shared\DriverDetail.cshtml" />
+    <Content Include="Views\Shared\DisplayDate.cshtml" />
+    <Content Include="Views\Shared\NgIfNgShow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
