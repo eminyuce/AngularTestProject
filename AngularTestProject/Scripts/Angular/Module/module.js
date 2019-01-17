@@ -31,6 +31,10 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
           templateUrl: "/home/partial/NgIfNgShow",
           controller: "AngularDirectiveController"
       }).
+       when("/home/angularPromises", {
+           templateUrl: "/home/partial/Promises",
+             controller: "LabController"
+         }).
       otherwise({ redirectTo: '/' });
 }]);
 

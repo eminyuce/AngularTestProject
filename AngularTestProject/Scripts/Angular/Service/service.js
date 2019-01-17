@@ -28,3 +28,17 @@ app.service('ergastAPIservice', function ($http) {
 
       return ergastAPI;
   });
+app.service('LabAPIservice', function ($http) {
+      var LabAPI = {};
+
+      LabAPI.loadDetail = function (name) {
+          var url = 'https://api.github.com/repos/angular/' + name;
+          return $http.get(url);
+      }
+ 
+      LabAPI.getRepos = function () {
+          return $http.get('https://api.github.com/orgs/angular/repos');
+      }
+
+      return LabAPI;
+  });
