@@ -10,6 +10,7 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
     //    enabled: true 
     //});
     $locationProvider.html5Mode(true).hashPrefix('!')
+    $routeProvider.caseInsensitiveMatch = true;
     $routeProvider.
       when("/", {
           templateUrl: "/home/partial/AuthorList",
@@ -31,14 +32,18 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
           templateUrl: "/home/partial/NgIfNgShow",
           controller: "AngularDirectiveController"
       }).
-       when("/home/angularPromises", {
+      when("/home/angularPromises", {
            templateUrl: "/home/partial/Promises",
              controller: "LabController"
-       }).
-        when("/home/angularPromises2", {
+      }).
+      when("/home/angularPromises2", {
            templateUrl: "/home/partial/Promises",
            controller: "LabGithubController"
-         }).
+      }).
+      when("/home/FormSample", {
+          templateUrl: "/home/partial/FormSample",
+          controller: "FormSampleController"
+            }).
       otherwise({ redirectTo: '/' });
 }]);
 
