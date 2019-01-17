@@ -2,7 +2,7 @@
 /// <reference path="D:\Projects\TestProjects\AngularTestProject\AngularTestProject\Views/Shared/AngularPartials/AuthorList.cshtml" />
 var app;
 (function () {
-    app = angular.module("ANG", ['ngRoute'])
+    app = angular.module("ANG", ['ngRoute', 'ngResource'])
 })();
 
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
@@ -34,6 +34,10 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
        when("/home/angularPromises", {
            templateUrl: "/home/partial/Promises",
              controller: "LabController"
+       }).
+        when("/home/angularPromises2", {
+           templateUrl: "/home/partial/Promises",
+           controller: "LabGithubController"
          }).
       otherwise({ redirectTo: '/' });
 }]);
@@ -61,3 +65,24 @@ app.config(function ($sceDelegateProvider) {
     ]);
 });
 app.constant('myConfig', { applicationName: 'My Angular JS App' });
+app.factory('gitHub', [
+            '$resource',
+            function ($resource) {
+                return $resource('https://api.github.com/:action/angular/:id',
+                    {
+                        action: '@action',
+                        id: '@id'
+                    },
+                    {
+                        getAll: {
+                            method: 'GET',
+                            isArray: true,
+                            params: { action: 'orgs', id: 'repos' }
+                        },
+                        getDetail: {
+                            method: 'GET',
+                            params: { action: 'repos' }
+                        },
+                    });
+            }
+]);
