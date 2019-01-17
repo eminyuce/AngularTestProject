@@ -85,11 +85,21 @@ app.controller('LabController', [
         };
         $scope.checkOddNumber = checkOddNumber;
         $scope.appName = myConfig.applicationName;
-        $scope.getRepos = function () {
+
+     
+
+        $scope.getRepos = function (search) {
             var promisePost = LabAPIservice.getRepos();
             promisePost.then(function (response) {
-                console.log(response);
-                $scope.model.repos = response.data;
+                console.log(search);
+                $scope.model.detail = null;
+                $scope.model.repos = response.data.filter(function (item) {
+                    if (item.language != null) {
+                        return item.language.toLowerCase() === search;
+                    }
+                    return false;
+                });
+              
             }, function (errorPl) {
                 console.log("Countries list fetching error : " + errorPl.data);
             });
@@ -145,7 +155,7 @@ function ($scope, $timeout, $q, $http,  gitHub,myConfig) {
         };
         $scope.checkOddNumber = checkOddNumber;
         $scope.appName = myConfig.applicationName;
-        $scope.getRepos = function getRepos() {
+        $scope.getRepos = function getRepos(search) {
             $scope.model.repos = gitHub.getAll();
         }
 
