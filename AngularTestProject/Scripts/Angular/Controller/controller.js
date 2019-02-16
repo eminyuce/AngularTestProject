@@ -118,7 +118,7 @@ app.controller('LabController', [
                 console.log(search);
                 $scope.model.detail = null;
                 $scope.model.repos = response.data.filter(function (item) {
-                    if (item.language != null) {
+                    if (item.language !== null) {
                         return item.language.toLowerCase() === search;
                     }
                     return false;
@@ -163,7 +163,7 @@ app.controller('LabController', [
             return defer.promise;
         }
         function isNumberOdd(input) {
-            return !isNaN(input) && input % 2 == 1;
+            return !isNaN(input) && input % 2 === 1;
         }
     }
 ]);
@@ -212,7 +212,7 @@ function ($scope, $timeout, $q, $http, gitHub, myConfig) {
         return defer.promise;
     }
     function isNumberOdd(input) {
-        return !isNaN(input) && input % 2 == 1;
+        return !isNaN(input) && input % 2 === 1;
     }
 }
 ]);
