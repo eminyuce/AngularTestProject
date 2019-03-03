@@ -805,6 +805,7 @@
     <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\Angular\Directives\directive.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
@@ -866,6 +867,7 @@
     <Content Include="Views\Shared\NgIfNgShow.cshtml" />
     <Content Include="Views\Shared\Promises.cshtml" />
     <Content Include="Views\Shared\FormSample.cshtml" />
+    <Content Include="Views\Shared\Student.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

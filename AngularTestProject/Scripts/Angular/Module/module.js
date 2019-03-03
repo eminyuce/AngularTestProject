@@ -39,7 +39,11 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
       when("/home/angularPromises2", {
            templateUrl: "/home/partial/Promises",
            controller: "LabGithubController"
-      }).
+        }).
+        when("/home/student", {
+            templateUrl: "/home/partial/Student",
+            controller: "StudentController"
+        }).
       when("/home/FormSample", {
           templateUrl: "/home/partial/FormSample",
           controller: "FormSampleController"

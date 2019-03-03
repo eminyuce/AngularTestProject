@@ -22,6 +22,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="/">Home</a></li>
+                    <li><a href="/home/student">student</a></li>
                     <li><a href="/home/drivers">Drivers</a></li>
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -41,10 +42,11 @@
 
     <script src="~/Scripts/angular.js"></script>
     <script src="~/Scripts/angular-route.js"></script>
- 
+
     <script src="/Scripts/Angular/Module/Module.js"></script>
     <script src="/Scripts/Angular/Controller/Controller.js"></script>
     <script src="/Scripts/Angular/Service/Service.js"></script>
+    <script src="~/Scripts/Angular/Directives/directive.js"></script>
     <script src="~/Scripts/angular-resource.js"></script>
 
     @RenderSection("scripts", required: false)
